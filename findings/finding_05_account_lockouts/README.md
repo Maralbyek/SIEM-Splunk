@@ -1,4 +1,4 @@
-# Finding 05 - Account Lockout Analysis
+# Finding 5 - Account Lockout Analysis
 
 ## Objective
 Identify users experiencing the highest number of account lockouts.
