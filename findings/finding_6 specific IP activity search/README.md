@@ -1,26 +1,7 @@
-# Finding 04 - Failed Authentication Analysis
+# Finding: Suspicious User Account Creation (Event ID 4720)
 
-## Objective
+SPL Query
+index=* event_id=4720 status=Suspicious destination_ip=172.16.1.53 source_ip=156.34.23.112
 
-Identify source IP addresses responsible for the highest number of failed authentication attempts.
-
-## SPL Query
-
-```spl
-index=main event_type="Failed Logon"
-| stats count by source_ip
-| sort - count
-| head 10
-# Finding 04 - Failed Authentication Analysis
-
-## Objective
-
-Identify source IP addresses responsible for the highest number of failed authentication attempts.
-
-## SPL Query
-
-```spl
-index=main event_type="Failed Logon"
-| stats count by source_ip
-| sort - count
-| head 10
+## Description 
+A user account creation event (Event ID 4720) was detected on the internal host 172.16.1.53. The activity originated from an external IP address 156.34.23.112, which is not part of the trusted network range. This activity is considered suspicious as it may indicate unauthorized access and a potential attempt to establish persistence on the system.
