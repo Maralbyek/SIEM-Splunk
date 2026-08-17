@@ -26,7 +26,7 @@ Initial focus:
 
 Project initialization. The project is currently focused on building the basic SIEM environment and analysing initial security events.
 ## Example SPL Commands
-```Python
+```Shell
 index=* | stats count
 index=* | stats count by event_type
 index=* event_type="Failed Logon"
