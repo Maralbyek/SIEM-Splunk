@@ -5,7 +5,7 @@ Identify users experiencing the highest number of account lockouts.
 
 ## SPL Query
 
-```spl
+```Shell
 index=main event_type="Account Lockout"
 | stats count by username
 | sort - count
